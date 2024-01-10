@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Forms and Validations</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/form.css">
+</head>
+<body>
+  <h1>FORM VALIDATION</h1>
+  <hr>
+  <section>
+    <form name="myform" method="Post">
+      <label>Student Name:</label>
+      <input id="name" placeholder="Your first name" type="text" name="name">
+      <br>
+      <label>Student ID:</label>
+      <input id="ID" placeholder="Student ID" type="number" name="ID">
+      <br>
+      <label>Emai Address:</label>
+      <input id="email" placeholder="abc@gamil.com" type="text" name="email">
+      <br>
+      <label>Post Code:</label>
+      <input id="postcode" placeholder="A1A 1A1" type="postcode" name="postcode">
+      <br>
+      <input type="submit" value="Submit" style="background-color: black; color: white;">
+      <p id="errors"></p>
+    </form> 
+
+  </section>
+
+  <section>
+    <div>
+
+      <%
+        if(typeof(errors) != 'undefined')
+        {
+          for (let err of errors)
+          {
+      %>
+            <p class="errors"> Error : <%= err.msg %> </p>
+      <%
+          }
+        }
+      %>
+
+      <%
+        if(typeof(errorMessage) != 'undefined')
+        {
+      %>
+          <p class="errors"> Error : <%= errorMessage %> </p>
+      <%
+        }
+      %>
+
+      <p>Receipt:</p>
+      <table>
+        <th>STUDENT INFORMATION</th>
+        <tr>
+          <th>Student-Name:</th>
+
+          <% if(typeof(name) != 'undefined')
+          {
+          %>
+            <td> <%= name %> </td>
+          <%
+          }
+          %>
+        </tr>
+
+        <tr>
+          <th>Student-ID:</th>
+
+          <% if(typeof(ID) != 'undefined')
+          {
+          %>
+          <td> <%= ID %> </td>
+          <%
+          }
+          %>
+        </tr>
+
+        <tr>
+          <th>Email-ID:</th>
+
+          <% if(typeof(email) != 'undefined')
+          {
+          %>
+          <td> <%= email %> </td>
+          <%
+          }
+          %>
+        </tr>
+
+        <tr>
+          <th>Post-Code:</th>
+
+          <% if(typeof(postcode) != 'undefined')
+          {
+          %>
+          <td> <%= postcode %> </td>
+          <%
+          }
+          %>
+        </tr>
+
+      </table>
+    </div>
+  </section>
+  <div class="tableData">
+    <table align="center">
+      <thead>
+        <th>Student ID </th>
+        <th>Name </th>
+        <th>Email </th>
+        <th>Post Code </th>
+      </thead>
+      <tbody>
+        <% 
+          if(typeof(orders) != 'undefined'){
+          for (var student of orders) {
+        %>
+          <tr>
+            <td> <%= student.ID %> </td>
+            <td> <%= student.name %> </td>
+            <td><%= student.email %></td>
+            <td><%= student.postcode %></td>
+        </tr>
+        <%
+          }
+        }
+        %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

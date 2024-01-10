@@ -1,0 +1,19 @@
+{
+  "name": "assignment-3",
+  "version": "1.0.0",
+  "description": "This is assignment-3",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Kamakshi",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2",
+    "mongoos": "^0.0.1-security",
+    "mongoose": "^6.8.0"
+  }
+}

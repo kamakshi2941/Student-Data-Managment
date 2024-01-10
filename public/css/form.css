@@ -1,0 +1,46 @@
+body
+{
+    font-family: cursive; 
+    background-color: #9DB6CD;
+    font-size: 3ch;
+    color: #000000;
+    align-content: center;
+}
+h1
+{
+    text-align: center;
+    font-size: 2pc;
+}
+form 
+{
+    width: 70%;
+}
+
+form input
+{ 
+    display: block;
+    width: 300px; 
+    height: 25px;
+    font-size: 16px;
+}
+hr
+{
+    width: auto;
+    border: #000000 solid 5px;
+
+}
+form div 
+{
+    margin: 10px 0;
+}
+
+form label 
+{
+    display: block;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+table,tr
+{
+    border: black solid 2px;
+}
